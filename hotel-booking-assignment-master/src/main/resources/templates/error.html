@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body class="bg-light">
+
+<main class="container mt-5">
+  <h3 class="text-center" th:text="${message}"></h3>
+  <a th:href="@{/}" >GO Home</a>
+</main>
+
+</body>
+</html>

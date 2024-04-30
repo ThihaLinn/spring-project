@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<a href="../static/images/11.png"></a>
+   <main role="main">
+     <div class="container p-5 bg-white shadow-sm mt-3">
+       <div class=" mt-5">
+         <h2 class="fw-bold">Royal Hotel</h2>
+         <div class="my-3">
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+           <i class="fas fa-star"></i>
+         </div>
+         <small>Luxury spa aparthotel, walk to Royal Ontario Museum</small>
+         <h4 class="my-3">Choice dates to view rooms</h4>
+       </div>
+       <div class=" ">
+         <form th:action="@{/rooms/available-rooms}"  method="post">
+           <div class="row">
+               <div class="col">
+                 <input name="selectedDate" type="date" id="one" th:min="${date}"  class="form-control-lg w-100">
+               </div>
+               <div class="col-2">
+                 <input type="submit"  class="btn btn-lg btn-primary" value="Check your date">
+               </div>
+           </div>
+         </form>
+       </div>
+     </div>
+     <h3 class="text-center fw-normal my-5">Rooms</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 mb-5" th:each="room : ${rooms}">
+            <div class="card" style="width: 392px">
+              <div class="card-img">
+                <div th:id="${'my'+room.section}" class="carousel slide">
+                  <div class="carousel-inner">
+                    <div class="carousel-item ">
+                      <img th:src="${room.imgOneUrl}" width="392"  height="220">
+                    </div>
+                    <div class="carousel-item active" >
+                      <img th:src="${room.imgTwoUrl}" width="392"  height="220">
+                    </div>
+                    <div class="carousel-item  ">
+                      <img th:src="${room.imgThreeUrl}" width="392" height="220">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev active" type="button" th:data-bs-target="${'#my'+room.section}" data-bs-slide="prev">
+                    <span class="" aria-hidden="true"><i class="fa-solid fa-circle-chevron-left fs-2 bg-primary rounded-5"></i></i></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next active" type="button" th:data-bs-target="${'#my'+room.section}" data-bs-slide="next">
+                    <span class="" aria-hidden="true"><i class="fa-solid fa-circle-chevron-right fs-2 bg-primary rounded-5"></i></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div class="row mb-3">
+                    <div class="col fs-5 fw-bold">Room:<span class="col ms-1" th:text="${room.name}"></span></div>
+                  </div>
+                  <div class="row mb-3">
+                    <small class="col"> <i class="far fa-square fs-5 me-3"></i>350 sq ft</small>
+                  </div>
+                  <div class="row mb-3">
+                    <small class="col"><i class="fas fa-bed me-3"></i> 1 bedroom</small>
+                  </div>
+                  <div class="row mb-3">
+                    <smal class="col "><i class="fas fa-user-friends me-3"></i>Sleep 2</smal>
+                  </div>
+                  <div class="row">
+                    <div class="offset-6 col ">
+                      <label for="one" type="button" class="ms-auto btn btn-primary border rounded px-3" >Choose your date</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   </main>
+
+</body>
+</html>

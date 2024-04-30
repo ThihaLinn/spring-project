@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<body>
+
+    <main role="main">
+        <div class="container">
+            <div class="mt-5 row shadow-sm">
+                <div class="col">
+                    <h2 class="fw-bold">Royal Hotel</h2>
+                    <div class="my-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <small>Luxury spa aparthotel, walk to Royal Ontario Museum</small>
+                </div>
+                <div class="offset-3 col" >
+                    <div class="row">
+                        <div class=" col-4">
+                            <div class="fs-6 mb-2">First Name    </span></div>
+                            <div class="fs-6 mb-2">Last Name     </div>
+                            <div class="fs-6 mb-2">Account Name  </div>
+                            <div class="fs-6 mb-2">Gmail         </span></div>
+                        </div>
+                        <div class="col-1">
+                            <div class="fs-6 mb-2">:</div>
+                            <div class="fs-6 mb-2">:</div>
+                            <div class="fs-6 mb-2">:</div>
+                            <div class="fs-6 mb-2">:</div>
+                        </div>
+                        <div class="col">
+                            <div class="fs-6 fw-bold mb-2" th:text="${guest.firstName}"></div>
+                            <div class="fs-6 fw-bold mb-2" th:text="${guest.lastName}"></div>
+                            <div class="fs-6 fw-bold mb-2" th:text="${guest.securityUser.name}"></div>
+                            <div class="fs-6 fw-bold mb-2" th:text="${guest.securityUser.email}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div sec:authorize="hasAuthority('USER')" class="card my-4">
+               <div th:if="${!reservation.isEmpty()}">
+                   <div class="card-body"  >
+                       <table class="p-3 table">
+                           <thead>
+                           <tr>
+                               <th>ID</th>
+                               <th>Date</th>
+                               <th>Room</th>
+                               <th>Action</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           <tr th:each="res : ${reservation}">
+                               <td th:text="${res.id}"></td>
+                               <td th:text="${res.reservationDate}"></td>
+                               <td th:text="${res.getRoom().getName()}"></td>
+                               <td>Action</td>
+                           </tr>
+                           </tbody>
+                       </table>
+                   </div>
+               </div>
+               <div th:unless="${!reservation.isEmpty()}">
+                    <div class="card w-100 d-flex justify-content-center align-items-center" style="height: 650px">
+                        <h4 class="fw-bold">NO RESULT</h4>
+                        <a th:href="@{/rooms/room-list}" class="btn btn-primary btn" >Book now</a>
+                    </div>
+               </div>
+            </div>
+            <div sec:authorize="hasAuthority('ADMIN')" class="card my-4">
+                <div class="card-body" >
+                    <table class="p-3 table">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Account Name</th>
+                            <th>Date</th>
+                            <th>Room</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="allRes : ${allReservation}">
+                            <td th:text="${allRes.id}"></td>
+                            <td th:text="${allRes.guest.firstName}"></td>
+                            <td th:text="${allRes.guest.lastName}"></td>
+                            <td th:if="${allRes != null and allRes.guest != null and allRes.guest.securityUser != null and allRes.guest.securityUser.name!=null}" >
+                                <span th:text="${allRes.guest.securityUser.name}"></span>
+                            </td>
+                            <td th:unless="${allRes != null and allRes.guest != null and allRes.guest.securityUser != null and allRes.guest.securityUser.name!=null}" >
+                                <span class="text-center" >-</span>
+                            </td>
+                            <td th:text="${allRes.reservationDate}"></td>
+                            <td th:text="${allRes.getRoom().getName()}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

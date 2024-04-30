@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+    <main role="main">
+        <div class="container mt-5 ">
+            <img src="https://shorturl.at/avKTU" class="w-100 border rounded shadow-lg">
+            <div class="row p-5 bg-danger w-75 m-auto bg-light border rounded shadow translate-middle-y">
+                <div class="col text-center align-self-center">
+                    <span>Temperature : 30'C</span>
+                </div>
+                <div class="col text-center align-self-center">
+                    <span>Rooms : 12</span>
+                </div>
+                <div class="col text-center align-self-center">
+                    <a th:href="@{/rooms/room-list}" class="btn btn-primary w-50">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <h4 class="text-center mb-5">What <span class="text-warning">Service</span> ,We <span class="text-warning">Give</span> You!</h4>
+            <div class="row">
+                <div class="col-4 mb-4">
+                    <div class="card px-3 py-1 border border-warning">
+                        <div class="card-body">
+                            <div class="position-relative mb-2" style="height: 100px">
+                                <i class="fas fa-circle position-relative " style="font-size: 70px;color: #facc15;top: 15px"></i>
+                                <span class="translate-middle-y position-absolute fw-bold" style="top: 50px;left : 30px">FREE WIFI</span>
+                            </div>
+                            <div class="card-text">Experience seamless connectivity at our hotel with complimentary high-speed Wi-Fi. Whether you're here for business or leisure, stay connected effortlessly throughout your stay. Our free Wi-Fi ensures you can work efficiently, stream your favorite content, or connect with loved ones. Enjoy the convenience of staying online, making your visit to our hotel even more enjoyable. Stay connected, stay comfortable – it's all part of the exceptional experience we provide.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="card px-3 py-1 border border-warning">
+                        <div class="card-body">
+                            <div class="position-relative mb-2" style="height: 100px">
+                                <i class="fas fa-circle position-relative " style="font-size: 70px;color: #facc15;top: 15px"></i>
+                                <span class="translate-middle-y position-absolute fw-bold" style="top: 50px;left : 30px">EASY BOOKING</span>
+                            </div>
+                            <div class="card-text">
+                                Discover seamless booking at our hotel, where convenience meets luxury. With our user-friendly online booking platform, reserving your stay has never been easier. Enjoy a hassle-free experience, whether you're planning a business trip or a leisurely getaway. Our intuitive interface ensures swift confirmation, making your reservation process a breeze. Elevate your travel experience with effortless bookings at our hotel, where comfort begins at the click of a button.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="card px-3 py-1 border border-warning">
+                        <div class="card-body">
+                            <div class="position-relative mb-2" style="height: 100px">
+                                <i class="fas fa-circle position-relative " style="font-size: 70px;color: #facc15;top: 15px"></i>
+                                <span class="translate-middle-y position-absolute fw-bold" style="top: 50px;left : 30px">RESTAURANTS</span>
+                            </div>
+                            <div class="card-text">Indulge your palate at our exquisite hotel restaurants, where culinary delights meet unparalleled ambiance. Savor a symphony of flavors crafted by our skilled chefs, showcasing local and international cuisines. Whether you seek an intimate dining experience or a vibrant atmosphere, our restaurants cater to every taste. Immerse yourself in a gastronomic journey that transcends the ordinary, promising an unforgettable dining experience at our distinguished hotel.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="card px-3 py-1 border border-warning">
+                        <div class="card-body">
+                            <div class="position-relative mb-2" style="height: 100px">
+                                <i class="fas fa-circle position-relative " style="font-size: 70px;color: #facc15;top: 15px"></i>
+                                <span class="translate-middle-y position-absolute fw-bold" style="top: 50px;left : 30px">SWIMMING POOL</span>
+                            </div>
+                            <div class="card-text">Dive into luxury at our exquisite hotel, where the sparkling oasis of our swimming pool awaits. Whether you're seeking a refreshing dip or a leisurely sun-soaked afternoon, our poolside sanctuary offers the perfect escape. Indulge in a tranquil retreat where every splash is accompanied by unparalleled comfort.Dive into ultimate relaxation at our exquisite hotel, where our swimming pool invites you to unwind in a tranquil oasis of crystal-clear waters and lush surroundings.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="card px-3 py-1 border border-warning">
+                        <div class="card-body">
+                            <div class="position-relative mb-2" style="height: 100px">
+                                <i class="fas fa-circle position-relative " style="font-size: 70px;color: #facc15;top: 15px"></i>
+                                <span class="translate-middle-y position-absolute fw-bold" style="top: 50px;left : 30px">BEAUTY HEALTH</span>
+                            </div>
+                            <div class="card-text">Indulge in the epitome of relaxation at our exquisite hotel, where beauty and health converge seamlessly. Immerse yourself in rejuvenating spa treatments, crafted to restore your vitality. Our state-of-the-art fitness center awaits, offering a haven for wellness enthusiasts. From invigorating workouts to serene spa escapes, elevate your well-being amidst the luxurious surroundings of our hotel – a sanctuary dedicated to the harmony of beauty and health.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="card px-3 py-1 border border-warning">
+                        <div class="card-body">
+                            <div class="position-relative mb-2" style="height: 100px">
+                                <i class="fas fa-circle position-relative " style="font-size: 70px;color: #facc15;top: 15px"></i>
+                                <span class="translate-middle-y position-absolute fw-bold" style="top: 50px;left : 30px">SUPPORT TEAM</span>
+                            </div>
+                            <div class="card-text">Our dedicated Support Team at [Your Hotel Name] is committed to ensuring your stay exceeds expectations. With a passion for hospitality, our team is available 24/7 to address your inquiries, provide assistance, and guarantee a seamless experience. our knowledgeable and friendly Support Team is always ready to make your stay exceptional.Our dedicated support team at XYZ Hotel is committed to providing exceptional service, ensuring that your stay exceeds expectations.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-4">
+            <h4 class="my-5 text-center">Our <span class="text-warning">Best</span> Rooms</h4>
+            <div class="row">
+                <div class="col-4" style="height:620px">
+                    <div  style="margin-bottom: 20px">
+                        <img src="https://shorturl.at/bdw68" class="w-100 border rounded shadow-sm" height="300">
+                    </div>
+                    <div >
+                        <img src="https://shorturl.at/mqCGK" class="w-100 border rounded shadow-sm" height="300">
+                    </div>
+                </div>
+                <div class="col-4" style="height:620px">
+                    <img src="https://shorturl.at/bxILT" class="border rounded w-100 shadow-sm" height="620">
+                </div>
+                <div class="col-4" style="height:620px">
+                    <div  style="margin-bottom: 20px">
+                        <img src="https://shorturl.at/djuP6" class="w-100 border rounded shadow-sm" height="300">
+                    </div>
+                    <div >
+                        <img src="https://shorturl.at/agiqH" class="w-100 border rounded shadow-sm" height="300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
