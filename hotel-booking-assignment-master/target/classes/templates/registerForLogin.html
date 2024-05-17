@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <main role="main">
+        <div class="container my-auto">
+            <div class="mt-5 text-center">
+                <h2 class="fw-bold">Royal Hotel</h2>
+                <div class="my-3">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <small>Luxury spa aparthotel, walk to Royal Ontario Museum</small>
+            </div>
+            <form th:action="@{'/register/save-booking?id='+${id}}"  method="post" class="my-5">
+                <div class="row p-5 bg-danger w-75 m-auto bg-light border rounded shadow ">
+                    <div class="col text-center align-self-center">
+                        <span>Room : <span th:text="${room}"></span><input th:value="${room}"  name="roomName" class="visually-hidden"></span>
+                    </div>
+                    <div class="col text-center align-self-center">
+                        <span>Date : <span th:text="${date}"></span><input th:value="${date}"  name="date" class="visually-hidden"></span>
+                    </div>
+                    <div class="col text-center align-self-center">
+                        <input type="submit" class="btn btn-primary w-50" value="Booking Now">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </main>
+</body>
+</html>
